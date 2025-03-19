@@ -21,6 +21,10 @@ const useBook = (page = 1) => {
   }
 
   const searchBook = (searchInput) => {
+    if(searchInput === ''){
+      toast.error('enter search text');
+      return;
+    }
     searchInput = searchInput.toLowerCase().trim();
     setSearchData([])
     const searchResult = []

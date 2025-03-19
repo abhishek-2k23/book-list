@@ -9,13 +9,13 @@ function BooksContainer() {
   useEffect(() => fetchBooks, [])
 
   return (
-    <div className="w-10/12   ">
+    <div className="w-10/12 ">
       {
           searchData.length > 0 && <div>
             <p className="px-2">Search result for : </p>
             </div>
         }
-      <div className="flex flex-wrap w-full justify-center gap-5 space-y-5 parent">
+      <div className="flex flex-wrap w-full justify-evenly gap-10 space-y-5 parent">
         
         {
           searchData.length > 0 ? (

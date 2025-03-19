@@ -22,7 +22,7 @@ function Book({ book }) {
     shortDesc = description.substring(0, 100) + "..."
   }
   return (
-    <div className="border border-slate-400 rounded-md w-56 py-2">
+    <div className="border-2 border-slate-600 rounded-md w-60 py-2">
       {/* book smallThumbnail  */}
       <div className="w-full h-44 flex justify-center">
         <img src={imageLinks?.smallThumbnail} className="h-full " />
