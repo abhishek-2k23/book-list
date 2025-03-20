@@ -1,9 +1,10 @@
-import React, { useState } from "react"
+import React, { useContext } from "react"
+import AppContext from "../contextApi/AppContext";
 
 function Book({ book }) {
-  const [readMore, setReadMore] = useState(false)
-  function toggleReadMore(){
-    setReadMore((prev) => (!prev));
+  const {readMore, setReadMore} = useContext(AppContext);
+  function handleReadMore(book){
+    setReadMore(book);
   }
   const { volumeInfo } = book
   const {
@@ -22,7 +23,7 @@ function Book({ book }) {
     shortDesc = description.substring(0, 100) + "..."
   }
   return (
-    <div className="border-2 border-slate-600 rounded-md w-60 py-2">
+    <div className="border-2 border-slate-600 hover:border-slate-500 transition-all duration-200  rounded-md w-60 py-2">
       {/* book smallThumbnail  */}
       <div className="w-full h-44 flex justify-center">
         <img src={imageLinks?.smallThumbnail} className="h-full " />
@@ -35,9 +36,9 @@ function Book({ book }) {
 
         {/* description  */}
         <p className="text-justify text-sm">
-          {readMore ? description : shortDesc}{" "}
+          {shortDesc}{" "}
           <span
-            onClick={toggleReadMore}
+            onClick={() => handleReadMore(book)}
             className="text-blue-600 hover:text-blue-500 cursor-pointer"
           >
             {readMore ? "read less" : "read more"}
@@ -45,8 +46,8 @@ function Book({ book }) {
         </p>
 
         {/* authors and category  */}
-        <p>Authors : {authors?.join(", ")}</p>
-        <p>Category : {categories?.join(", ")}</p>
+        <p>Authors : {authors!== undefined ? authors?.join(", ") : 'no data'}</p>
+        <p>Category : {categories!== undefined ? categories?.join(", ") : 'no data'}</p>
 
         {/* publishing date  */}
         <p>{publishedDate}</p>
