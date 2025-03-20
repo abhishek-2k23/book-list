@@ -8,8 +8,8 @@ function SearchBar() {
     const {searchData} = useContext(AppContext);
     
   return (
-    <div className='w-full md:w-9/12 flex flex-col md:flex-row gap-2 mb-5 md:mb-0'>
-        <input 
+    <div className='w-full sm:w-9/12 flex flex-col sm:flex-row gap-2 mb-5 md:mb-0'>
+        <input
             type='text'
             placeholder='search by title, author'
             className='w-full md:w-3/4 py-2 md:py-3 px-2 border border-slate-500 rounded-full'
