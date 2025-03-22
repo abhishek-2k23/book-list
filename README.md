@@ -28,9 +28,13 @@ A React-based web application that allows users to search for books using a free
 
 ## 📸 Screenshots
 
-| Home Page | Search Results | Book Details |
-|-----------|---------------|-------------|
-| ![Home](./src/assets/screenshot/books_list.png) | ![Search](./src/assets/screenshot/search.png) | ![Details](./src/assets/screenshot/read_more.png) |
+| Home Page |  Book Details |
+|-----------|-------------|
+| ![Home](./src/assets/screenshot/books_list.png) | ![Details](./src/assets/screenshot/read_more.png) |
+
+| Loading Page |  Search Details |
+|-----------|-------------|
+| ![Loading](./src/assets/screenshot/loading.png) |  ![Details](./src/assets/screenshot/search.png) |
 
 ## 🛠️ Tech Stack & Packages
 
