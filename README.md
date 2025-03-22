@@ -51,7 +51,7 @@ A React-based web application that allows users to search for books using a free
 git clone https://github.com/abhishek-2k23/book-list
 
 # Navigate to the project folder
-cd book-finder-app
+cd book-list
 
 # Install dependencies
 npm install
