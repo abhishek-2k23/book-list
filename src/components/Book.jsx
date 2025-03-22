@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import AppContext from "../contextApi/AppContext";
-
+import { FiLink } from "react-icons/fi";
 function Book({ book }) {
   const {readMore, setReadMore} = useContext(AppContext);
   function handleReadMore(book){
@@ -50,7 +50,9 @@ function Book({ book }) {
         <p>Category : {categories!== undefined ? categories?.join(", ") : 'no data'}</p>
 
         {/* publishing date  */}
-        <p>{publishedDate}</p>
+        <p>Publishing data : {publishedDate}</p>
+
+        <a href={infoLink} target="_blank" className="underline w-fit text-blue-400 "><FiLink className="hover:text-gray-400"/></a>
       </div>
     </div>
   )
