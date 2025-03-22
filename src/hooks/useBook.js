@@ -2,10 +2,10 @@ import { useContext, useEffect } from "react"
 import AppContext from "../contextApi/AppContext"
 import toast from "react-hot-toast"
 const useBook = () => {
-  const { books, setBooks, inputRef, setSearchData, setSearchStatus, setLoading, setError, page } = useContext(AppContext)
+  const { books, setBooks, inputRef, setSearchData, setSearchStatus, setLoading, setError } = useContext(AppContext)
 
   //free api url 
-  const url = `https://api.freeapi.app/api/v1/public/books?page=${page}&limit=20&inc=kind%252Cid%252Cetag%252CvolumeInfo&query=tech`
+  const url = `https://api.freeapi.app/api/v1/public/books?page=1&limit=20&inc=kind%252Cid%252Cetag%252CvolumeInfo&query=tech`
   const options = { method: "GET", headers: { accept: "application/json" } }
 
   //fetching books
