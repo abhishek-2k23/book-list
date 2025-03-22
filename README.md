@@ -4,8 +4,8 @@ A React-based web application that allows users to search for books using a free
 
 ## 🚀 Live Demo & Repository
 
-- **Live App:** [Book Finder App](https://your-live-app-url.firebaseapp.com)
-- **GitHub Repository:** [GitHub Link](https://github.com/your-username/book-finder-app)
+- **Live App:** [Book Finder App](https://books-listing-assignment.web.app)
+- **GitHub Repository:** [GitHub Link](https://github.com/abhishek-2k23/book-list)
 
 ## 📑 Table of Contents
 
@@ -30,7 +30,7 @@ A React-based web application that allows users to search for books using a free
 
 | Home Page | Search Results | Book Details |
 |-----------|---------------|-------------|
-| ![Home]('./src/assets/screenshot/books_list.png') | ![Search]('./src/assets/screenshot/search.png') | ![Details]('./src/assets/screenshot/read_more.png') |
+| ![Home](./src/assets/screenshot/books_list.png) | ![Search](./src/assets/screenshot/search.png) | ![Details](./src/assets/screenshot/read_more.png) |
 
 ## 🛠️ Tech Stack & Packages
 
@@ -44,7 +44,7 @@ A React-based web application that allows users to search for books using a free
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/book-finder-app.git
+git clone https://github.com/abhishek-2k23/book-list
 
 # Navigate to the project folder
 cd book-finder-app
