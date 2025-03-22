@@ -2,11 +2,12 @@ import { useContext, useEffect } from "react"
 import AppContext from "../contextApi/AppContext"
 import toast from "react-hot-toast"
 const useBook = (page = 1) => {
-  const { books, setBooks, setSearchData, setSearchStatus } = useContext(AppContext)
+  const { books, setBooks, inputRef, setSearchData, setSearchStatus } = useContext(AppContext)
   const url = `https://api.freeapi.app/api/v1/public/books?page=${page}&limit=20&inc=kind%252Cid%252Cetag%252CvolumeInfo&query=tech`
   const options = { method: "GET", headers: { accept: "application/json" } }
 
   const fetchBooks = async () => {
+    console.log('fetchBooks start');
     try {
       const res = await fetch(url, options)
       const result = await res.json()
@@ -20,7 +21,9 @@ const useBook = (page = 1) => {
     }
   }
 
-  const searchBook = (searchInput) => {
+  const searchBook = () => {
+    console.log(inputRef);
+    let searchInput = inputRef.current.value;
     if(searchInput === ''){
       toast.error('enter search text');
       return;
