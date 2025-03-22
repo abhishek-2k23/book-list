@@ -1,12 +1,65 @@
-# React + Vite
+# 📚 Books listing App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application that allows users to search for books using a free public API. Users can search by title or author, view book details, and reset the search to display all available books. The app also includes error handling, loading states, and custom hooks for book-related functions. 
 
-Currently, two official plugins are available:
+## 🚀 Live Demo & Repository
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Live App:** [Book Finder App](https://your-live-app-url.firebaseapp.com)
+- **GitHub Repository:** [GitHub Link](https://github.com/your-username/book-finder-app)
 
-## Expanding the ESLint configuration
+## 📑 Table of Contents
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+
+## ✨ Features
+
+- 🔍 **Search Books** - Search by title or author.
+- 🎨 **Book Listing** - Display book image, title, author, category, and description.
+- 🔄 **Reset Search** - Clear input and show all books again.
+- 🔥 **React Hot Toast** - Show notifications.
+- 📖 **Detailed View** - Click "Read More" to view full details of a book.
+- 🚀 **Optimized Performance** - Uses `useContext` for state management.
+- 🛠️ **Error Handling & Loading States** - Ensures smooth user experience.
+
+## 📸 Screenshots
+
+| Home Page | Search Results | Book Details |
+|-----------|---------------|-------------|
+| ![Home]('./src/assets/screenshot/books_list.png') | ![Search]('./src/assets/screenshot/search.png') | ![Details]('./src/assets/screenshot/read_more.png') |
+
+## 🛠️ Tech Stack & Packages
+
+- **Framework:** [Vite](https://vitejs.dev/) (for React)
+- **State Management:** React Context API (`ApiContext`)
+- **UI & Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+- **Notifications:** [React Hot Toast](https://react-hot-toast.com/)
+- **Hosting:** Firebase
+
+## 📥 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/book-finder-app.git
+
+# Navigate to the project folder
+cd book-finder-app
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+## 🚀 Usage
+
+1. Open the app in your browser.
+2. Enter a book title or author name in the search bar.
+3. Click the **Search** button to fetch books.
+4. Click **Reset** to clear the input and display all books.
+5. Click **Read More** on any book to see detailed information.
