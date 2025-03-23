@@ -7,7 +7,9 @@ import Loading from "./Loading"
 function BooksContainer() {
   const { books, searchData, loading, error, inputRef } = useContext(AppContext)
   const { fetchBooks } = useBook()
-  useEffect(() => fetchBooks, [])
+  useEffect(() => {
+    fetchBooks()
+  }, [])
 
   return (
     <div className="w-full md:w-10/12 ">

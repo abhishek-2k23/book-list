@@ -1,25 +1,27 @@
 import { useContext, useEffect } from "react"
 import AppContext from "../contextApi/AppContext"
 import toast from "react-hot-toast"
+const API_URL = import.meta.env.VITE_API_URL;
+
 const useBook = () => {
   const { books, setBooks, inputRef, setSearchData, setSearchStatus, setLoading, setError } = useContext(AppContext)
 
-  //free api url 
-  const url = `https://api.freeapi.app/api/v1/public/books?page=1&limit=20&inc=kind%252Cid%252Cetag%252CvolumeInfo&query=tech`
-  const options = { method: "GET", headers: { accept: "application/json" } }
+  //free api options
+  const options = { method: "GET", headers: { 'accept': "application/json", 'Access-Control-Allow-Origin': "*" } }
 
   //fetching books
   const fetchBooks = async () => {
-    console.log('fetchBooks start');
+    console.log('fetchBooks function call');
     setLoading(true);
     try {
-      const res = await fetch(url, options)
+      const res = await fetch(API_URL, options)
       const result = await res.json()
       if (books.length === 0) {
         setBooks(result?.data?.data)
+        console.log(result.data?.data)
       } else {
         //adding new list with prev books
-        setBooks((prev) => [...prev, ...result?.data?.data])
+        setBooks((prev) => [...prev, ...result.data.data])
       }
     } catch (e) {
       console.log(e)
@@ -32,7 +34,7 @@ const useBook = () => {
 
   //searching books
   const searchBook = () => {
-    console.log(inputRef);
+    console.log('input ref ', inputRef);
     let searchInput = inputRef.current.value;
 
     //return when search inupt is empty
@@ -64,7 +66,7 @@ const useBook = () => {
     })
 
     if(searchResult.length === 0){
-      setSearchStatus(false);
+      // setSearchStatus(false);
       toast.error('no search result');
     }else{
       setSearchData(searchResult)
@@ -74,7 +76,9 @@ const useBook = () => {
 
   //reset search result
   function resetSearch(){
-    inputRef.current = '';
+    if(inputRef.current){
+      inputRef.current = '';  
+    }
     setSearchData([]);
   }
 
